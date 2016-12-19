@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Hotel JSON Tutorial</h2>
+
+<p id="demo"></p>
+
+<script>
+
+var data = [{ 
+	"n": "Brazil, Sao Paulo",
+	"fn": "Sao Paulo, Brazil",
+	"cm": "no_image_campus.png",
+	"lat": -23.548943,
+	"lon": -46.638817,
+	"bld": [{
+		"n": "Berrini Park",
+		"lat": -23.601164,
+		"lon": -46.69287,
+		"addr": {
+			"line1": "Edifício Berrini Park",
+			"line2": "Rua Surubim, 504 - 4º andar",
+			"line3": "Cidade Monções São Paulo",
+			"city": "Sao Paulo",
+			"state": "CEP",
+			"country": "Brasil",
+			"zip": "04571-050",
+			"ph1": "+55 11 5509.7200",
+			"ph2": ""
+		},
+		"f": [{
+			"n": "3rd",
+			"fp": "BRA-Sao-Paulo-Berrini-Park-03.png",
+			"fpb": "BRA-Sao-Paulo-Berrini-Park-03-blank.png",
+			"r": [{
+				"n": "Johannesburg",
+				"rn": "SP33019",
+				"sc": "6",
+				"cm": "SP33019.png"
+			}, {
+				"n": "Nova Deli",
+				"rn": "SP33021",
+				"sc": "",
+				"cm": "SP33021.png"
+			}, {
+				"n": "Sao Paulo",
+				"rn": "SP33025",
+				"sc": "",
+				"cm": "SP33025.png"
+			}]
+		}, {
+			"n": "4th",
+			"fp": "BRA-Sao-Paulo-Berrini-Park-04.png",
+			"fpb": "BRA-Sao-Paulo-Berrini-Park-04-blank.png",
+			"r": [{
+				"n": "",
+				"rn": "SP34028",
+				"sc": "",
+				"cm": "SP34028.png"
+			}]
+		}]
+	}]
+}, {
+	"n": "Canada, Burlington",
+	"fn": "Burlington, Canada",
+	"cm": "no_image_campus.png",
+	"lat": 43.32552,
+	"lon": -79.799034,
+	"bld": [{
+		"n": "International",
+		"lat": 43.391685,
+		"lon": -79.76226,
+		"addr": {
+			"line1": "1122 International Blvd.",
+			"line2": "",
+			"line3": "",
+			"city": "Burlington",
+			"state": "Ontario",
+			"country": "Canada",
+			"zip": "L7L 6Z8",
+			"ph1": "+1 (905) 315-6000",
+			"ph2": ""
+		},
+		"f": [{
+			"n": "2nd",
+			"fp": "CAN-Burlington-International-02.png",
+			"fpb": "CAN-Burlington-International-02-blank.png",
+			"r": [{
+				"n": "Oastler Lake",
+				"rn": "BC02308",
+				"sc": "",
+				"cm": "BC02308.png"
+			}, {
+				"n": "Banff",
+				"rn": "BC02309",
+				"sc": "",
+				"cm": "BC02309.png"
+			}, {
+				"n": "Glacier",
+				"rn": "BC02311",
+				"sc": "",
+				"cm": "BC02311.png"
+			}, {
+				"n": "Killarney",
+				"rn": "BC02312",
+				"sc": "",
+				"cm": "BC02312.png"
+			}, {
+				"n": "Frontenac",
+				"rn": "BC02313",
+				"sc": "",
+				"cm": "BC02313.png"
+			}, {
+				"n": "Craigleith",
+				"rn": "BC02314",
+				"sc": "",
+				"cm": "BC02314.png"
+			}, {
+				"n": "Kootenay",
+				"rn": "BC02315",
+				"sc": "",
+				"cm": "BC02315.png"
+			}, {
+				"n": "Little Cove",
+				"rn": "BC02317",
+				"sc": "",
+				"cm": "BC02317.png"
+			}]
+		}, {
+			"n": "3rd",
+			"fp": "CAN-Burlington-International-03.png",
+			"fpb": "CAN-Burlington-International-03-blank.png",
+			"r": [{
+				"n": "Silver Falls",
+				"rn": "BC03384",
+				"sc": "",
+				"cm": "BC03384.png"
+			}, {
+				"n": "Jasper",
+				"rn": "BC03388",
+				"sc": "",
+				"cm": "BC03388.png"
+			}]
+		}]
+	}]
+}];
+
+//var obj = JSON.parse(data);
+
+var text = "";
+
+var item = { "n" : "Pune", "rn" : "SP33999", "sc" : "" , "cm" : "SP33019.png" };
+data[0].bld[0].f[0].r.push(item);
+
+var temp = data[0].bld[0].f[0].r;
+var length = temp.length;
+
+for(var i=0 ; i<length ; i++)
+{
+	text = text + "n -> " + temp[i].n + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+
+</script>
+
+</body>
+</html>
